@@ -7,7 +7,6 @@ import (
 	"os"
 	"time"
 	"log"
-	_"github.com/prongbang/goenv"
 )
 
 type product struct {
@@ -72,7 +71,7 @@ func getPort() string {
 	var port = os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
-		fmt.Println("No Port In Heroku" + port)
+		log.Print("No Port In Heroku", port)
 	}
 	return ":" + port
 }
