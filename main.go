@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"os"
 	"time"
+	"log"
+	_"github.com/prongbang/goenv"
 )
 
 type product struct {
@@ -57,9 +59,13 @@ func getProduct(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleRequest() {
+	log.Print("Starting Service")
+
 	http.HandleFunc("/", homePage)
 	http.HandleFunc("/products", getProduct)
-	http.ListenAndServe(getPort(), nil)
+
+	log.Print("The service is ready to listen and serve on http://localhost:8080")
+  	log.Fatal(http.ListenAndServe(getPort(), nil))
 }
 
 func getPort() string {
