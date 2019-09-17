@@ -1,2 +1,2 @@
 [Filename: Procfile]
-web: GoSampleApi
+web: bin/GoSampleApi
