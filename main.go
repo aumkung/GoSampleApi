@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 	"log"
-	_"github.com/prongbang/goenv"
+	// _"github.com/prongbang/goenv"
 )
 
 type product struct {
