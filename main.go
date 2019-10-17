@@ -3,10 +3,10 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"time"
-	"log"
 )
 
 type product struct {
@@ -54,6 +54,13 @@ func getProduct(w http.ResponseWriter, r *http.Request) {
 		Category:  "Mobile",
 		CreatedAt: formatted,
 	})
+
+	myProduct = append(myProduct, product{
+		ID:        5,
+		Name:      "IPhone 11 Pro",
+		Category:  "Mobile",
+		CreatedAt: formatted,
+	})
 	json.NewEncoder(w).Encode(myProduct)
 }
 
@@ -64,7 +71,7 @@ func handleRequest() {
 	http.HandleFunc("/products", getProduct)
 
 	log.Print("The service is ready to listen and serve on http://localhost:8080")
-  	log.Fatal(http.ListenAndServe(getPort(), nil))
+	log.Fatal(http.ListenAndServe(getPort(), nil))
 }
 
 func getPort() string {
