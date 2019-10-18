@@ -11,4 +11,5 @@ services:
       - .:/go/src/GoSampleApi
     command: ["go","run","main.go"]
     ports:
-    - "8080:8080"
+      # - "8080:8080"
+      - "1323:1323"
