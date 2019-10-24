@@ -9,7 +9,7 @@ services:
     # working_dir: /go/src/GoSampleApi
     volumes:
       - .:/go/src/GoSampleApi
-    command: ["go","run","main.go"]
+    # command: ["fresh","main.go"]
     ports:
       # - "8080:8080"
       - "1323:1323"
