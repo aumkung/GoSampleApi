@@ -2,14 +2,11 @@ version: "3.0"
 
 services:
   app:
-    # image: golang:1.13-alpine
     build:
       context: ./image
       dockerfile: go-image.dockerfile
-    # working_dir: /go/src/GoSampleApi
     volumes:
       - .:/go/src/GoSampleApi
-    # command: ["fresh","main.go"]
     ports:
       # - "8080:8080"
       - "1323:1323"
